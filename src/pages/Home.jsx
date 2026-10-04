@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import CueLink from "@/components/ui/CueLink";
-import { HOME, ABOUT } from "@/data/home";
+import { HOME, ABOUT, SKILLS } from "@/data/home";
 import placeholderPortrait from "@/assets/images/placeholders/placeholder-portrait.jpg";
 import placeholderLandscape from "@/assets/images/placeholders/placeholder-landscape.jpg";
 
@@ -28,7 +28,7 @@ export default function Home() {
                             <div className="flex flex-col gap-2 md:gap-4 sm:flex-row">
                                 <Link
                                     to="/showcase"
-                                    className="btn md:btn-lg bg-violet-800 text-white hover:bg-violet-900 w-full sm:w-auto"
+                                    className="btn md:btn-lg bg-violet-600 text-white hover:bg-violet-800 w-full sm:w-auto"
                                 >
                                     View Showcase <i className="fas fa-arrow-right"></i>
                                 </Link>
@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="about" className="layout bg-base-300">
+            <section id="about" className="layout bg-base-300 border-b border-current/25">
                 <div className="layout-rail flex lg:flex-col gap-1">
                     <span>02</span>
                     <span className="inline lg:hidden">/</span>
@@ -135,9 +135,56 @@ export default function Home() {
                         </div>
 
                         <div className="text-xs lg:text-sm mt-8 lg:mt-0">
-                            <CueLink to="/showcase" icon="fa-arrow-right">
+                            <CueLink to="/background" icon="fa-arrow-right">
                                 MORE ABOUT MY BACKGROUND
                             </CueLink>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" className="bg-base-200 flex flex-col lg:flex-row border-b border-current/25">
+                <div className="strip-rail flex lg:flex-col gap-1">
+                    <span>03</span>
+                    <span className="inline lg:hidden">/</span>
+                    <span className="lg:opacity-75">SKILLS</span>
+                </div>
+
+                <div className="flex-1 overflow-hidden">
+                    <div className="flex flex-wrap border-collapse">
+                        {SKILLS.map(({ label, items }) => (
+                            <div
+                                key={label}
+                                className="strip-panel"
+                            >
+                                <div className="flex flex-wrap items-center justify-center gap-4">
+                                    {items.map(({ name, icon }) => (
+                                        <div key={name} className="tooltip" data-tip={name}>
+                                            <i
+                                                className={`${icon} strip-icon`}
+                                                role="img"
+                                                aria-label={name}
+                                            ></i>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="text-sm font-semibold opacity-75">
+                                    {label}
+                                </div>
+                            </div>
+                        ))}
+
+                        <div className="strip-panel">
+                            <div className="flex flex-col items-start gap-4">
+                                <p className="font-body text-sm lg:text-base text-start opacity-75">
+                                    Plus a few more tools I've picked up along the way.
+                                </p>
+                                <div className="text-xs lg:text-sm">
+                                    <CueLink to="/showcase" icon="fa-arrow-right">
+                                        VIEW ALL SKILLS
+                                    </CueLink>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

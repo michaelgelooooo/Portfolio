@@ -10,7 +10,7 @@ function CueLink({
     const isAnchor = to.startsWith("#");
     const isExternal = /^(https?:|mailto:)/.test(to);
  
-    const classes = `text-violet-500 font-semibold hover:opacity-75 ${className}`;
+    const classes = `text-violet-500 font-semibold hover:opacity-50 ${className}`;
 
     const content = (
         <>
