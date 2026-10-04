@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CueLink from "@/components/ui/CueLink";
+import { HOME, ABOUT } from "@/data/home";
 import placeholderPortrait from "@/assets/images/placeholders/placeholder-portrait.jpg";
 import placeholderLandscape from "@/assets/images/placeholders/placeholder-landscape.jpg";
 
@@ -17,13 +18,11 @@ export default function Home() {
                     <div className="space-y-8 lg:space-y-16">
                         <div className="space-y-1 md:space-y-2 lg:space-y-4">
                             <div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HELLO I'M</div>
-                            <h1 className="text-6xl md:text-8xl">Michæl.</h1>
-                            <h3 className="font-subheading text-2xl md:text-4xl italic">I like making things work.</h3>
+                            <h1 className="text-6xl md:text-8xl">{HOME.heading}</h1>
+                            <h3 className="font-subheading text-2xl md:text-4xl italic">{HOME.subheading}</h3>
                         </div>
 
-                        <p className="text-base md:text-xl opacity-75">
-                            I build full-stack applications from the interface to the underlying systems, with a focus on solving problems and creating useful experiences.
-                        </p>
+                        <p className="text-base md:text-xl opacity-75">{HOME.text}</p>
 
                         <div className="md:flex items-end justify-between">
                             <div className="flex flex-col gap-2 md:gap-4 sm:flex-row">
@@ -97,7 +96,7 @@ export default function Home() {
                 <div className="layout-panel flex flex-col justify-center gap-4">
                     <div className="space-y-1 md:space-y-2 block lg:hidden">
                         <div className="badge badge-primary badge-xs md:badge-sm">MORE ABOUT ME</div>
-                        <h1 className="text-2xl md:text-6xl">One Commit at a Time</h1>
+                        <h1 className="text-4xl md:text-6xl">{ABOUT.heading}</h1>
                     </div>
                     <div className="w-full">
                         <div className="corner-frame p-4">
@@ -116,16 +115,13 @@ export default function Home() {
                     <div className="h-full flex flex-col justify-center gap-2 md:gap-4 lg:gap-8">
                         <div className="space-y-4 hidden lg:block">
                             <div className="badge badge-primary badge-md">MORE ABOUT ME</div>
-                            <h1 className="text-6xl">One Commit at a Time</h1>
+                            <h1 className="text-6xl">{ABOUT.heading}</h1>
                         </div>
 
                         <div className="text-sm md:text-base lg:text-lg opacity-80 space-y-1 md:space-y-2 lg:space-y-4">
-                            <p>
-                                I'm Michael Angelo A. Ochengco, a full-stack web developer who enjoys turning ideas into digital experiences. I work across the frontend and backend to build practical solutions.
-                            </p>
-                            <p>
-                                Beyond development, I value consistency, curiosity, and continuous improvement. I enjoy learning how things work, exploring new ideas, and taking on challenges.
-                            </p>
+                            {ABOUT.text.map((text, i) => (
+                                <p key={i}>{text}</p>
+                            ))}
                         </div>
 
                         <div className="divider m-0"></div>
@@ -135,9 +131,7 @@ export default function Home() {
                                 <i className="fa-solid fa-mug-hot opacity-80"></i>
                             </div>
 
-                            <p className="text-sm md:text-base lg:text-md opacity-60">
-                                Outside of development, I enjoy reading manga, listening to music, and gaming.
-                            </p>
+                            <p className="text-sm md:text-base lg:text-md opacity-60">{ABOUT.note}</p>
                         </div>
 
                         <div className="text-xs lg:text-sm mt-8 lg:mt-0">
