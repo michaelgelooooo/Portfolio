@@ -5,12 +5,18 @@
 }
 
 @theme {
-    --font-heading: "DM Serif Display", serif;
+    --font-heading: "DM Serif Text", serif;
+    --font-subheading: "Noto Serif Display", serif;
     --font-ui: "JetBrains Mono", monospace;
     --font-body: "Outfit", sans-serif;
 }
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+        @apply scrollbar-none;
+    }
+
     body {
         font-family: var(--font-ui);
     }
@@ -22,17 +28,21 @@
     h5,
     h6 {
         font-family: var(--font-heading);
-        font-weight: 400;
     }
 
     p {
         font-family: var(--font-body);
     }
+
+    .btn {
+        @apply rounded-none!;
+    }
 }
 
+/*  HEADER */
 @layer components {
     .nav-link {
-        @apply border-b border-transparent opacity-75 text-xs font-semibold pb-1 transition-colors;
+        @apply border-b border-transparent opacity-75 text-sm font-semibold pb-1 transition-colors;
     }
 
     .nav-link:hover {
@@ -45,5 +55,57 @@
 
     .theme-toggle {
         @apply btn btn-ghost btn-circle bg-transparent hover:bg-base-300 border-0 swap swap-rotate;
+    }
+}
+
+/* LAYOUT */
+@layer components {
+    .layout {
+        @apply flex h-[85vh] md:h-[95vh] flex-col lg:flex-row;
+    }
+
+    .layout-rail {
+        @apply text-sm border-current/25 lg:border-r w-full lg:w-[5%] px-4 md:px-8 lg:px-4 py-4;
+    }
+
+    .layout-panel {
+        @apply lg:flex-1 border-current/25 lg:border-r px-4 md:px-8 lg:p-16;
+    }
+
+    .layout-panel:last-child {
+        @apply flex-1 border-0;
+    }
+}
+
+@layer components {
+    .corner-frame {
+        --frame-color: var(--color-base-content);
+        --frame-len: 1.5rem;
+        --frame-width: 2px;
+
+        padding: 0.75rem;
+        background:
+            linear-gradient(var(--frame-color), var(--frame-color)) top left / var(--frame-len) var(--frame-width),
+            linear-gradient(var(--frame-color), var(--frame-color)) top left / var(--frame-width) var(--frame-len),
+            linear-gradient(var(--frame-color), var(--frame-color)) top right / var(--frame-len) var(--frame-width),
+            linear-gradient(var(--frame-color), var(--frame-color)) top right / var(--frame-width) var(--frame-len),
+            linear-gradient(var(--frame-color), var(--frame-color)) bottom left / var(--frame-len) var(--frame-width),
+            linear-gradient(var(--frame-color), var(--frame-color)) bottom left / var(--frame-width) var(--frame-len),
+            linear-gradient(var(--frame-color), var(--frame-color)) bottom right / var(--frame-len) var(--frame-width),
+            linear-gradient(var(--frame-color), var(--frame-color)) bottom right / var(--frame-width) var(--frame-len);
+        background-repeat: no-repeat;
+    }
+
+    .corner-frame-fit {
+        --ratio: 0.75;
+        /* 3:4 */
+    }
+
+    @media (width >=64rem) {
+        .corner-frame-fit {
+            margin-inline: auto;
+            width: min(100cqw, 100cqh * var(--ratio));
+            height: min(100cqh, 100cqw / var(--ratio));
+        }
     }
 }

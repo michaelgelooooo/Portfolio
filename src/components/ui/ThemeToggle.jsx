@@ -29,8 +29,8 @@ export default function ThemeToggle() {
             aria-label="Toggle dark mode"
             aria-pressed={isDark}
         >
-            <i className="fa-solid fa-sun swap-off text-xl"></i>
-            <i className="fa-solid fa-moon swap-on text-xl"></i>
+            <i className="fa-regular fa-sun swap-off text-xl"></i>
+            <i className="fa-regular fa-moon swap-on text-xl"></i>
         </button>
     );
 }
