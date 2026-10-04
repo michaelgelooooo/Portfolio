@@ -9,14 +9,14 @@ function CueLink({
 }) {
     const isAnchor = to.startsWith("#");
     const isExternal = /^(https?:|mailto:)/.test(to);
-
-    const classes = `text-purple-700 font-semibold hover:opacity-75 ${className}`;
+ 
+    const classes = `text-violet-500 font-semibold hover:opacity-75 ${className}`;
 
     const content = (
         <>
-            {iconPosition === "before" && <i className={`fas ${icon}`}></i>}
+            {iconPosition === "before" && <i className={`fas ${icon} me-1`}></i>}
             <span>{children}</span>
-            {iconPosition === "after" && <i className={`fas ${icon}`}></i>}
+            {iconPosition === "after" && <i className={`fas ${icon} ms-1`}></i>}
         </>
     );
 

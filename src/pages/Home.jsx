@@ -7,25 +7,21 @@ export default function Home() {
     return (
         <>
             <section id="home" className="layout bg-base-200 border-b border-current/25">
-                <div className="layout-rail flex">
-                    <div className="flex lg:flex-col gap-1 ">
-                        <span>01</span>
-                        <span className="inline lg:hidden">/</span>
-                        <span className="lg:opacity-75">HOME</span>
-                    </div>
-
-                    <div className="badge badge-primary lg:hidden ms-auto">HELLO I'M</div>
+                <div className="layout-rail flex lg:flex-col gap-1">
+                    <span>01</span>
+                    <span className="inline lg:hidden">/</span>
+                    <span className="lg:opacity-75">HOME</span>
                 </div>
 
                 <div className="layout-panel flex flex-col lg:py-32">
                     <div className="space-y-8 lg:space-y-16">
-                        <div className="space-y-2 lg:space-y-4">
-                            <div className="badge badge-primary badge-lg hidden lg:block">HELLO I'M</div>
+                        <div className="space-y-1 md:space-y-2 lg:space-y-4">
+                            <div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HELLO I'M</div>
                             <h1 className="text-6xl md:text-8xl">Michæl.</h1>
                             <h3 className="font-subheading text-2xl md:text-4xl italic">I like making things work.</h3>
                         </div>
 
-                        <p className="text-base md:text-xl">
+                        <p className="text-base md:text-xl opacity-75">
                             I build full-stack applications from the interface to the underlying systems, with a focus on solving problems and creating useful experiences.
                         </p>
 
@@ -33,7 +29,7 @@ export default function Home() {
                             <div className="flex flex-col gap-2 md:gap-4 sm:flex-row">
                                 <Link
                                     to="/showcase"
-                                    className="btn md:btn-lg bg-purple-700 text-white hover:bg-purple-900 w-full sm:w-auto"
+                                    className="btn md:btn-lg bg-violet-800 text-white hover:bg-violet-900 w-full sm:w-auto"
                                 >
                                     View Showcase <i className="fas fa-arrow-right"></i>
                                 </Link>
@@ -91,8 +87,66 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="about" className="layout bg-base-200">
+            <section id="about" className="layout bg-base-300">
+                <div className="layout-rail flex lg:flex-col gap-1">
+                    <span>02</span>
+                    <span className="inline lg:hidden">/</span>
+                    <span className="lg:opacity-75">ABOUT</span>
+                </div>
 
+                <div className="layout-panel flex flex-col justify-center gap-4">
+                    <div className="space-y-1 md:space-y-2 block lg:hidden">
+                        <div className="badge badge-primary badge-xs md:badge-sm">MORE ABOUT ME</div>
+                        <h1 className="text-2xl md:text-6xl">One Commit at a Time</h1>
+                    </div>
+                    <div className="w-full">
+                        <div className="corner-frame p-4">
+                            <div className="bg-base-100 border border-current/25 p-2">
+                                <img
+                                    className="object-cover"
+                                    src={placeholderLandscape}
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="layout-panel py-4 md:py-8 lg:py-16">
+                    <div className="h-full flex flex-col justify-center gap-2 md:gap-4 lg:gap-8">
+                        <div className="space-y-4 hidden lg:block">
+                            <div className="badge badge-primary badge-md">MORE ABOUT ME</div>
+                            <h1 className="text-6xl">One Commit at a Time</h1>
+                        </div>
+
+                        <div className="text-sm md:text-base lg:text-lg opacity-80 space-y-1 md:space-y-2 lg:space-y-4">
+                            <p>
+                                I'm Michael Angelo A. Ochengco, a full-stack web developer who enjoys turning ideas into digital experiences. I work across the frontend and backend to build practical solutions.
+                            </p>
+                            <p>
+                                Beyond development, I value consistency, curiosity, and continuous improvement. I enjoy learning how things work, exploring new ideas, and taking on challenges.
+                            </p>
+                        </div>
+
+                        <div className="divider m-0"></div>
+
+                        <div className="flex gap-4 items-center">
+                            <div className="size-12 shrink-0 flex items-center justify-center bg-base-100 border border-current/25">
+                                <i className="fa-solid fa-mug-hot opacity-80"></i>
+                            </div>
+
+                            <p className="text-sm md:text-base lg:text-md opacity-60">
+                                Outside of development, I enjoy reading manga, listening to music, and gaming.
+                            </p>
+                        </div>
+
+                        <div className="text-xs lg:text-sm mt-8 lg:mt-0">
+                            <CueLink to="/showcase" icon="fa-arrow-right">
+                                MORE ABOUT MY BACKGROUND
+                            </CueLink>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     );

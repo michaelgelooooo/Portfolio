@@ -1,3 +1,5 @@
+import CueLink from "@/components/ui/CueLink";
+
 export default function Footer() {
     return (
         <footer className="footer border-t border-current/25 px-4 py-4 sm:px-8">
@@ -12,12 +14,11 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col items-center gap-1 md:items-end">
-                    <button
-                        onClick={() => window.scrollTo({ top: 0 })}
-                        className="text-sm hover:cursor-pointer hover:opacity-75"
-                    >
-                        <span>Back to Top <i className="fas fa-arrow-up"></i></span>
-                    </button>
+                    <div className="text-sm">
+                        <CueLink to="#home" icon="fa-arrow-up">
+                            BACK TO TOP
+                        </CueLink>
+                    </div>
 
                     <p className="text-sm opacity-50">© 2026 Michæl. All rights reserved.</p>
                 </div>
