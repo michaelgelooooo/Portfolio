@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "@/components/layout/Layout.jsx";
-import Home from "@/pages/Home.jsx";
-import Showcase from "@/pages/Showcase.jsx";
-import Background from "@/pages/Background.jsx";
-import Contact from "@/pages/Contact.jsx";
+import Layout from "@/components/layout/Layout";
+import Home from "@/pages/Home";
+import Showcase from "@/pages/Showcase";
+import Background from "@/pages/Background";
+import Contact from "@/pages/Contact";
 
 export default function App() {
 	return (
