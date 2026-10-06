@@ -15,7 +15,7 @@ export default function Footer() {
 
 				<div className="flex flex-col items-center gap-1 md:items-end">
 					<div className="text-sm">
-						<CueLink to="#home" icon="fa-arrow-up">
+						<CueLink onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} icon="fa-arrow-up" iconPosition="before">
 							BACK TO TOP
 						</CueLink>
 					</div>

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import CueLink from "@/components/ui/CueLink";
-import { HOME, ABOUT, SKILLS } from "@/data/home";
-import placeholderPortrait from "@/assets/images/placeholders/placeholder-portrait.jpg";
-import placeholderLandscape from "@/assets/images/placeholders/placeholder-landscape.jpg";
+import { HOME, ABOUT, SKILLS, PROJECTS } from "@/data/home";
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/home/ProjectCard";
+import homePortrait from "@/assets/images/profile/home-portrait.jpg";
+import homeLandscape from "@/assets/images/profile/home-landscape.jpg";
+import aboutLandscape from "@/assets/images/profile/about-landscape.jpg";
 
 export default function Home() {
 	return (
@@ -14,7 +17,7 @@ export default function Home() {
 					<span className="lg:opacity-75">HOME</span>
 				</div>
 
-				<div className="layout-panel flex flex-col lg:py-32">
+				<div className="layout-panel flex flex-col">
 					<div className="space-y-8 lg:space-y-16">
 						<div className="space-y-1 md:space-y-2 lg:space-y-4">
 							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HELLO I'M</div>
@@ -61,8 +64,8 @@ export default function Home() {
 						<div className="corner-frame corner-frame-fit p-4">
 							<div className="bg-base-100 border border-current/25 p-2 w-full h-fit lg:h-full">
 								<picture>
-									<source media="(min-width: 1024px)" srcSet={placeholderPortrait} />
-									<img className="w-full h-auto lg:h-full object-cover" src={placeholderLandscape} alt="" />
+									<source media="(min-width: 1024px)" srcSet={homePortrait} />
+									<img className="w-full h-auto lg:h-full object-cover" src={homeLandscape} alt="" />
 								</picture>
 							</div>
 						</div>
@@ -85,7 +88,7 @@ export default function Home() {
 					<div className="w-full">
 						<div className="corner-frame p-4">
 							<div className="bg-base-100 border border-current/25 p-2">
-								<img className="object-cover" src={placeholderLandscape} alt="" />
+								<img className="object-cover" src={aboutLandscape} alt="" />
 							</div>
 						</div>
 					</div>
@@ -131,7 +134,7 @@ export default function Home() {
 				</div>
 
 				<div className="flex-1 overflow-hidden">
-					<div className="flex flex-wrap border-collapse">
+					<div className="flex flex-wrap">
 						{SKILLS.map(({ label, items }) => (
 							<div key={label} className="strip-panel">
 								<div className="flex flex-wrap items-center justify-center gap-4">
@@ -155,6 +158,39 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="projects" className="layout bg-base-300 border-b border-current/25">
+				<div className="layout-rail flex lg:flex-col gap-1">
+					<span>04</span>
+					<span className="inline lg:hidden">/</span>
+					<span className="lg:opacity-75">PROJECTS</span>
+				</div>
+
+				<div className="layout-panel flex flex-col gap-2 md:gap-4 lg:gap-8 py-4 md:py-8 lg:py-16">
+					<div className="flex justify-between items-end">
+						<div className="space-y-1 md:space-y-2 lg:space-y-4">
+							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HIGHLIGHTED WORK</div>
+							<h1 className="text-2xl md:text-4xl lg:text-6xl">{PROJECTS.heading}</h1>
+						</div>
+
+						<div className="text-xs lg:text-sm">
+							<CueLink to="/showcase" icon="fa-arrow-right">
+								ALL PROJECTS
+							</CueLink>
+						</div>
+					</div>
+
+					<div className="divider m-0"></div>
+
+					<div className="grid gap-2 md:gap-4 lg:gap-8 lg:grid-cols-2">
+						{projects.slice(0, 3).map((project, index) => (
+							<div key={project.name} className={index === 0 ? "lg:col-span-2" : ""}>
+								<ProjectCard project={project} featured={index === 0} />
+							</div>
+						))}
 					</div>
 				</div>
 			</section>

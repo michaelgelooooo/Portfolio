@@ -57,3 +57,7 @@ export const SKILLS: SkillCategory[] = [
 		],
 	},
 ];
+
+export const PROJECTS = {
+	heading: "Things I've Built",
+};

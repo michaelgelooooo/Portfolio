@@ -29,7 +29,7 @@ export default function Header() {
 					{NAV_ITEMS.map(({ to, number, label, end }) => (
 						<li key={to}>
 							<NavLink to={to} end={end} className="nav-link">
-								<span className="opacity-75 me-1 hidden lg:inline">{number}</span> {label}
+								<span className="opacity-50 me-1 hidden lg:inline">{number}</span> {label}
 							</NavLink>
 						</li>
 					))}

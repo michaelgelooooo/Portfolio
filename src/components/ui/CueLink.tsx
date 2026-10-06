@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 
 type CueLinkProps = {
-	to: string;
+	to?: string;
+	onClick?: () => void;
 	children: ReactNode;
 	icon?: string;
 	iconPosition?: "before" | "after";
 	className?: string;
 };
 
-function CueLink({ to, children, icon = "fa-arrow-down", iconPosition = "after", className = "" }: CueLinkProps) {
-	const isAnchor = to.startsWith("#");
-	const isExternal = /^(https?:|mailto:)/.test(to);
+function CueLink({ to, onClick, children, icon = "fa-arrow-down", iconPosition = "after", className = "" }: CueLinkProps) {
 	const classes = `text-violet-500 font-semibold hover:opacity-50 ${className}`;
 
 	const content = (
@@ -21,6 +20,18 @@ function CueLink({ to, children, icon = "fa-arrow-down", iconPosition = "after",
 			{iconPosition === "after" && <i className={`fas ${icon} ms-1`}></i>}
 		</>
 	);
+
+	// No destination: it's an action, so render a button
+	if (!to) {
+		return (
+			<button type="button" onClick={onClick} className={`${classes} cursor-pointer`}>
+				{content}
+			</button>
+		);
+	}
+
+	const isAnchor = to.startsWith("#");
+	const isExternal = /^(https?:|mailto:)/.test(to);
 
 	if (isAnchor || isExternal) {
 		return (
