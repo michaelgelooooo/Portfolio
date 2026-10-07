@@ -29,17 +29,13 @@ export default function Home() {
 
 						<div className="md:flex items-end justify-between">
 							<div className="flex flex-col gap-2 md:gap-4 sm:flex-row">
-								<Link to="/showcase" className="btn md:btn-lg bg-violet-600 text-white hover:bg-violet-800 w-full sm:w-auto">
+								<Link to="/showcase" className="btn md:btn-lg cta-btn w-full sm:w-auto">
 									View Showcase <i className="fas fa-arrow-right"></i>
 								</Link>
 
-								<Link to="/contact" className="btn md:btn-lg btn-outline w-full sm:w-auto">
+								<Link to="/contact" className="btn md:btn-lg cta-btn-alt w-full sm:w-auto">
 									Contact Me
 								</Link>
-							</div>
-
-							<div className="hidden md:inline lg:hidden">
-								<CueLink to="#about">MORE ABOUT ME</CueLink>
 							</div>
 						</div>
 					</div>
@@ -49,15 +45,14 @@ export default function Home() {
 					</div>
 				</div>
 
-				<div className="layout-panel flex flex-col-reverse lg:flex-col justify-center lg:justify-start items-center gap-4 py-4 md:py-8 lg:py-16">
+				<div className="layout-panel flex flex-col justify-center lg:justify-start items-center gap-4 py-4 md:py-8 lg:py-16">
 					<div className="flex w-full justify-between">
-						<div className="w-full md:hidden text-xs">
-							<CueLink to="#about">MORE ABOUT ME</CueLink>
-						</div>
-
-						<div className="flex flex-row lg:flex-col justify-end items-end gap-2 lg:gap-0 text-xs md:text-sm w-full">
+						<div className="flex flex-row lg:flex-col text-end gap-2 lg:gap-0 text-xs md:text-sm w-full">
 							<span className="opacity-50">BASED IN</span>
 							<span>LEYTE</span>
+						</div>
+						<div className="w-full lg:hidden text-end text-xs">
+							<CueLink to="#about">MORE ABOUT ME</CueLink>
 						</div>
 					</div>
 					<div className="w-full lg:flex-1 lg:min-h-0 lg:@container-size">
@@ -80,7 +75,7 @@ export default function Home() {
 					<span className="lg:opacity-75">ABOUT</span>
 				</div>
 
-				<div className="layout-panel flex flex-col justify-center gap-4">
+				<div className="layout-panel flex flex-col justify-start lg:justify-center gap-4">
 					<div className="space-y-1 md:space-y-2 block lg:hidden">
 						<div className="badge badge-primary badge-xs md:badge-sm">MORE ABOUT ME</div>
 						<h1 className="text-4xl md:text-6xl">{ABOUT.heading}</h1>
@@ -95,7 +90,7 @@ export default function Home() {
 				</div>
 
 				<div className="layout-panel py-4 md:py-8 lg:py-16">
-					<div className="h-full flex flex-col justify-center gap-2 md:gap-4 lg:gap-8">
+					<div className="h-full flex flex-col justify-center gap-1 md:gap-2 lg:gap-4">
 						<div className="space-y-4 hidden lg:block">
 							<div className="badge badge-primary badge-md">MORE ABOUT ME</div>
 							<h1 className="text-6xl">{ABOUT.heading}</h1>
@@ -110,17 +105,25 @@ export default function Home() {
 						<div className="divider m-0"></div>
 
 						<div className="flex gap-4 items-center">
-							<div className="size-12 shrink-0 flex items-center justify-center bg-base-100 border border-current/25">
-								<i className="fa-solid fa-mug-hot opacity-80"></i>
+							<div className="strip-icon">
+								<i className="fa-solid fa-lightbulb fa-sm"></i>
 							</div>
 
 							<p className="text-sm md:text-base lg:text-md opacity-60">{ABOUT.note}</p>
 						</div>
 
-						<div className="text-xs lg:text-sm">
-							<CueLink to="/background" icon="fa-arrow-right">
-								MORE ABOUT MY BACKGROUND
-							</CueLink>
+						<div className="divider m-0"></div>
+
+						<div className="flex justify-between items-center">
+							<a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn md:btn-lg cta-btn">
+								Resume <i className="fas fa-file-arrow-down" aria-hidden="true"></i>
+							</a>
+
+							<div className="text-xs lg:text-sm text-end lg:text-start">
+								<CueLink to="/background" icon="fa-arrow-right">
+									MY BACKGROUND
+								</CueLink>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -211,7 +214,7 @@ export default function Home() {
 					<div className="space-y-4 lg:text-end">
 						<p className="text-sm md:text-base lg:text-lg">{CONNECT.text}</p>
 						<div className="text-center lg:text-end">
-							<Link to="/contact" className="btn bg-violet-600 text-white btn-md md:btn-lg lg:btn-xl w-full lg:w-auto">
+							<Link to="/contact" className="btn cta-btn btn-md md:btn-lg lg:btn-xl w-full lg:w-auto">
 								Contact Me <i className="fas fa-arrow-right" aria-hidden="true"></i>
 							</Link>
 						</div>

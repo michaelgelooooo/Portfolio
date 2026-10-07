@@ -31,8 +31,8 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
 							))}
 						</div>
 
-						<div className="text-xs lg:text-sm">
-							<CueLink to={link} icon="fa-arrow-right">
+						<div className={`text-xs lg:text-sm text-end ${featured ? "lg:text-start" : ""}`}>
+							<CueLink to={link} icon="fa-eye">
 								VIEW PROJECT
 							</CueLink>
 						</div>

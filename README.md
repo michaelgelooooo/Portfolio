@@ -1,75 +1,85 @@
-# React + TypeScript + Vite
+# Michael Angelo A. Ochengco — Web Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal web portfolio.
 
-Currently, two official plugins are available:
+I'm **Michael Angelo A. Ochengco**, a **Full-Stack Web Developer** passionate about building functional, engaging, and user-focused web experiences.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This portfolio serves as a central place to learn more about me, explore my skills and projects, and view my academic and professional background.
 
-## React Compiler
+## 📌 About the Portfolio
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The portfolio is organized into four main sections:
 
-## Expanding the ESLint configuration
+### 🏠 Home
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The landing page and introduction to who I am, including a brief overview and an **About Me** section.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🚀 Showcase
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+A collection of my professional and technical highlights, including:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Skills
+- Projects
+- Awards & Achievements
 
+### 🎓 Background
+
+An overview of my academic and professional journey, including:
+
+- Education
+- Professional Experience
+- Trainings
+
+### 📬 Contact
+
+A dedicated section for getting in touch with me for professional opportunities, collaborations, or other inquiries.
+
+## 🎯 Purpose
+
+This portfolio was created to:
+
+- Introduce myself as a Full-Stack Web Developer
+- Showcase my technical skills and projects
+- Highlight my achievements and experiences
+- Present my educational and professional background
+- Provide a way for potential employers, clients, and collaborators to connect with me
+
+## 📂 Project Structure
+
+The portfolio is organized around the following pages:
+
+```text
+/
+├── Home
+│   └── Landing & About
+│
+├── Showcase
+│   ├── Skills
+│   ├── Projects
+│   └── Awards & Achievements
+│
+├── Background
+│   ├── Education
+│   ├── Professional Experience
+│   └── Trainings
+│
+└── Contact
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 👨‍💻 About Me
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Michael Angelo A. Ochengco** _Full-Stack Web Developer_
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+I enjoy developing web applications and exploring technologies that allow me to turn ideas into practical and meaningful digital experiences.
 
-```
+This portfolio reflects my journey, projects, skills, achievements, and continuous growth as a developer.
+
+## 📌 Status
+
+> 🚧 **Portfolio under development**
+
+The portfolio is currently being developed and refined. More information, projects, and additional features will be added as the project progresses.
+
+## 📄 License
+
+This project represents my personal portfolio and work. Please respect the ownership of the content, projects, designs, and other materials presented within it.

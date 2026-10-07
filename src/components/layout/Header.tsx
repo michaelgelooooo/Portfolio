@@ -1,19 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import ThemeToggle from "@/components/ui/ThemeToggle";
-
-type NavItem = {
-	to: string;
-	number: string;
-	label: string;
-	end?: boolean;
-};
-
-const NAV_ITEMS: NavItem[] = [
-	{ to: "/", number: "01", label: "Home", end: true },
-	{ to: "/showcase", number: "02", label: "Showcase" },
-	{ to: "/background", number: "03", label: "Background" },
-	{ to: "/contact", number: "04", label: "Contact" },
-];
+import { NAV_ITEMS } from "@/data/nav-items";
 
 export default function Header() {
 	return (
