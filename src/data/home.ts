@@ -61,3 +61,11 @@ export const SKILLS: SkillCategory[] = [
 export const PROJECTS = {
 	heading: "Things I've Built",
 };
+
+export const CONNECT = {
+
+    heading: "Let's Build Something Together.",
+
+    text: "Have a project, an opportunity, or an idea you'd like to bring to life? Feel free to reach out and let's see what we can create together.",
+
+};

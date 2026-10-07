@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import CueLink from "@/components/ui/CueLink";
-import { HOME, ABOUT, SKILLS, PROJECTS } from "@/data/home";
+import { HOME, ABOUT, SKILLS, PROJECTS, CONNECT } from "@/data/home";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/home/ProjectCard";
 import homePortrait from "@/assets/images/profile/home-portrait.jpg";
@@ -169,7 +169,7 @@ export default function Home() {
 					<span className="lg:opacity-75">PROJECTS</span>
 				</div>
 
-				<div className="layout-panel flex flex-col gap-2 md:gap-4 lg:gap-8 py-4 md:py-8 lg:py-16">
+				<div className="layout-panel flex flex-col gap-2 md:gap-4 lg:gap-8 pb-4 md:pb-8 lg:py-16">
 					<div className="flex justify-between items-end">
 						<div className="space-y-1 md:space-y-2 lg:space-y-4">
 							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HIGHLIGHTED WORK</div>
@@ -191,6 +191,30 @@ export default function Home() {
 								<ProjectCard project={project} featured={index === 0} />
 							</div>
 						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="connect" className="layout min-h-0 bg-base-200">
+				<div className="layout-rail flex lg:flex-col gap-1">
+					<span>05</span>
+					<span className="inline lg:hidden">/</span>
+					<span className="lg:opacity-75">CONNECT</span>
+				</div>
+
+				<div className="layout-panel grid grid-cols-1 lg:grid-cols-3 items-center gap-4 pb-4 md:pb-8 lg:py-16">
+					<div className="lg:col-span-2 space-y-2 lg:space-y-4">
+						<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">Let's work together</div>
+						<h2 className="text-3xl md:text-5xl lg:text-7xl">{CONNECT.heading}</h2>
+					</div>
+
+					<div className="space-y-4 lg:text-end">
+						<p className="text-sm md:text-base lg:text-lg">{CONNECT.text}</p>
+						<div className="text-center lg:text-end">
+							<Link to="/contact" className="btn bg-violet-600 text-white btn-md md:btn-lg lg:btn-xl w-full lg:w-auto">
+								Contact Me <i className="fas fa-arrow-right" aria-hidden="true"></i>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</section>
