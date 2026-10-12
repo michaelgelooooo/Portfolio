@@ -7,10 +7,10 @@ export default function Footer() {
 				<div>
 					<div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
 						<h1 className="text-2xl">Michæl.</h1>
-						<span className="text-sm opacity-75">| Full-Stack Developer</span>
+						<span className="text-sm opacity-80">| Full-Stack Developer</span>
 					</div>
 
-					<p className="italic opacity-75">"Habit is second nature"</p>
+					<p className="italic opacity-80">"Habit is second nature"</p>
 				</div>
 
 				<div className="flex flex-col items-center gap-1 md:items-end">
@@ -20,7 +20,7 @@ export default function Footer() {
 						</CueLink>
 					</div>
 
-					<p className="text-sm opacity-50">© 2026 Michæl. All rights reserved.</p>
+					<p className="text-sm opacity-60">© 2026 Michæl. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>

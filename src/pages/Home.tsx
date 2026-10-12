@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CueLink from "@/components/ui/CueLink";
-import { HOME, ABOUT, SKILLS, PROJECTS, CONNECT } from "@/data/home";
+import { HOME, ABOUT, PROJECTS, CONNECT } from "@/data/home";
+import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/home/ProjectCard";
 import homePortrait from "@/assets/images/profile/home-portrait.jpg";
@@ -14,18 +15,18 @@ export default function Home() {
 				<div className="layout-rail flex lg:flex-col gap-1">
 					<span>01</span>
 					<span className="inline lg:hidden">/</span>
-					<span className="lg:opacity-75">HOME</span>
+					<span className="lg:opacity-80">HOME</span>
 				</div>
 
 				<div className="layout-panel flex flex-col">
 					<div className="space-y-8 lg:space-y-16">
 						<div className="space-y-1 md:space-y-2 lg:space-y-4">
-							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HELLO I'M</div>
+							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">{HOME.badge}</div>
 							<h1 className="text-6xl md:text-8xl">{HOME.heading}</h1>
 							<h3 className="font-subheading text-2xl md:text-4xl italic">{HOME.subheading}</h3>
 						</div>
 
-						<p className="text-base md:text-xl opacity-75">{HOME.text}</p>
+						<p className="text-base md:text-xl opacity-80">{HOME.text}</p>
 
 						<div className="md:flex items-end justify-between">
 							<div className="flex flex-col gap-2 md:gap-4 sm:flex-row">
@@ -48,7 +49,7 @@ export default function Home() {
 				<div className="layout-panel flex flex-col justify-center lg:justify-start items-center gap-4 py-4 md:py-8 lg:py-16">
 					<div className="flex w-full justify-between">
 						<div className="flex flex-row lg:flex-col text-end gap-2 lg:gap-0 text-xs md:text-sm w-full">
-							<span className="opacity-50">BASED IN</span>
+							<span className="opacity-60">BASED IN</span>
 							<span>LEYTE</span>
 						</div>
 						<div className="w-full lg:hidden text-end text-xs">
@@ -72,12 +73,12 @@ export default function Home() {
 				<div className="layout-rail flex lg:flex-col gap-1">
 					<span>02</span>
 					<span className="inline lg:hidden">/</span>
-					<span className="lg:opacity-75">ABOUT</span>
+					<span className="lg:opacity-80">ABOUT</span>
 				</div>
 
 				<div className="layout-panel flex flex-col justify-start lg:justify-center gap-4">
 					<div className="space-y-1 md:space-y-2 block lg:hidden">
-						<div className="badge badge-primary badge-xs md:badge-sm">MORE ABOUT ME</div>
+						<div className="badge badge-primary badge-xs md:badge-sm uppercase">{ABOUT.badge}</div>
 						<h1 className="text-4xl md:text-6xl">{ABOUT.heading}</h1>
 					</div>
 					<div className="w-full">
@@ -92,7 +93,7 @@ export default function Home() {
 				<div className="layout-panel py-4 md:py-8 lg:py-16">
 					<div className="h-full flex flex-col justify-center gap-1 md:gap-2 lg:gap-4">
 						<div className="space-y-4 hidden lg:block">
-							<div className="badge badge-primary badge-md">MORE ABOUT ME</div>
+							<div className="badge badge-primary badge-md uppercase">{ABOUT.badge}</div>
 							<h1 className="text-6xl">{ABOUT.heading}</h1>
 						</div>
 
@@ -133,27 +134,27 @@ export default function Home() {
 				<div className="strip-rail flex lg:flex-col gap-1">
 					<span>03</span>
 					<span className="inline lg:hidden">/</span>
-					<span className="lg:opacity-75">SKILLS</span>
+					<span className="lg:opacity-80">SKILLS</span>
 				</div>
 
 				<div className="flex-1 overflow-hidden">
 					<div className="flex flex-wrap">
-						{SKILLS.map(({ label, items }) => (
+						{skills.map(({ label, items }) => (
 							<div key={label} className="strip-panel">
 								<div className="flex flex-wrap items-center justify-center gap-4">
-									{items.map(({ name, icon }) => (
+									{items.slice(0, 2).map(({ name, icon }) => (
 										<div key={name} className="tooltip" data-tip={name}>
 											<i className={`${icon} strip-icon`} role="img" aria-label={name}></i>
 										</div>
 									))}
 								</div>
-								<div className="text-sm font-semibold opacity-75">{label}</div>
+								<div className="text-sm font-semibold opacity-80">{label}</div>
 							</div>
 						))}
 
 						<div className="strip-panel">
 							<div className="flex flex-col items-start gap-4">
-								<p className="font-body text-sm lg:text-base text-start opacity-75">Plus a few more tools I've picked up along the way.</p>
+								<p className="font-body text-sm lg:text-base text-start opacity-80">Plus a few more tools I've picked up along the way.</p>
 								<div className="text-xs lg:text-sm">
 									<CueLink to="/showcase" icon="fa-arrow-right">
 										VIEW ALL SKILLS
@@ -169,13 +170,13 @@ export default function Home() {
 				<div className="layout-rail flex lg:flex-col gap-1">
 					<span>04</span>
 					<span className="inline lg:hidden">/</span>
-					<span className="lg:opacity-75">PROJECTS</span>
+					<span className="lg:opacity-80">PROJECTS</span>
 				</div>
 
 				<div className="layout-panel flex flex-col gap-2 md:gap-4 lg:gap-8 pb-4 md:pb-8 lg:py-16">
 					<div className="flex justify-between items-end">
 						<div className="space-y-1 md:space-y-2 lg:space-y-4">
-							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md">HIGHLIGHTED WORK</div>
+							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">{PROJECTS.heading}</div>
 							<h1 className="text-2xl md:text-4xl lg:text-6xl">{PROJECTS.heading}</h1>
 						</div>
 
@@ -202,12 +203,12 @@ export default function Home() {
 				<div className="layout-rail flex lg:flex-col gap-1">
 					<span>05</span>
 					<span className="inline lg:hidden">/</span>
-					<span className="lg:opacity-75">CONNECT</span>
+					<span className="lg:opacity-80">CONNECT</span>
 				</div>
 
 				<div className="layout-panel grid grid-cols-1 lg:grid-cols-3 items-center gap-4 pb-4 md:pb-8 lg:py-16">
 					<div className="lg:col-span-2 space-y-2 lg:space-y-4">
-						<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">Let's work together</div>
+						<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">{CONNECT.badge}</div>
 						<h2 className="text-3xl md:text-5xl lg:text-7xl">{CONNECT.heading}</h2>
 					</div>
 

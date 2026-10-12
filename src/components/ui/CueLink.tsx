@@ -11,7 +11,7 @@ type CueLinkProps = {
 };
 
 function CueLink({ to, onClick, children, icon = "fa-arrow-down", iconPosition = "after", className = "" }: CueLinkProps) {
-	const classes = `text-violet-500 font-semibold hover:opacity-50 ${className}`;
+	const classes = `text-violet-500 font-semibold hover:opacity-60 ${className}`;
 
 	const content = (
 		<>

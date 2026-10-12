@@ -21,7 +21,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
 					<h2 className="card-title text-xl md:text-2xl lg:text-4xl">{name}</h2>
 
 					<div className={`flex flex-col gap-4 ${featured ? "" : "mt-auto"}`}>
-						<p className="text-sm md:text-base lg:text-lg opacity-50">{description}</p>
+						<p className="text-sm md:text-base lg:text-lg opacity-60">{description}</p>
 
 						<div className="flex flex-wrap gap-2">
 							{tags.map((tag) => (

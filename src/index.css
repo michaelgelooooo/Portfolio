@@ -47,7 +47,7 @@
 /*  HEADER */
 @layer components {
 	.nav-link {
-		@apply border-b-2 border-transparent opacity-75 text-sm font-semibold pb-1 transition-colors;
+		@apply border-b-2 border-transparent opcaity-80 text-sm font-semibold pb-1 transition-colors;
 	}
 
 	.nav-link:hover {
