@@ -47,7 +47,7 @@
 /*  HEADER */
 @layer components {
 	.nav-link {
-		@apply border-b-2 border-transparent opcaity-80 text-sm font-semibold pb-1 transition-colors;
+		@apply border-b-2 border-transparent opacity-80 text-sm font-semibold pb-1 transition-colors;
 	}
 
 	.nav-link:hover {
@@ -160,10 +160,11 @@
 	}
 
 	.card {
-		@apply bg-base-100 border border-current/25 rounded-none! p-2 md:p-4 lg:p-8 gap-2 md:gap-4 lg:gap-8 transition! duration-200! ease-out!;
+		@apply border border-current/25 rounded-none! p-2 md:p-4 lg:p-8 gap-2 md:gap-4 lg:gap-8 transition! duration-200! ease-out!;
+		@apply bg-base-100 text-primary-content;
 
 		&:hover {
-			@apply bg-base-200 cursor-pointer;
+			@apply bg-primary-content text-base-100 cursor-pointer;
 		}
 	}
 }

@@ -3,7 +3,7 @@ import CueLink from "@/components/ui/CueLink";
 import { HOME, ABOUT, PROJECTS, CONNECT } from "@/data/home";
 import { skills } from "@/data/skills";
 import { projects } from "@/data/projects";
-import ProjectCard from "@/components/home/ProjectCard";
+import ProjectCard from "@/components/ui/ProjectCard";
 import homePortrait from "@/assets/images/profile/home-portrait.jpg";
 import homeLandscape from "@/assets/images/profile/home-landscape.jpg";
 import aboutLandscape from "@/assets/images/profile/about-landscape.jpg";
@@ -30,11 +30,11 @@ export default function Home() {
 
 						<div className="md:flex items-end justify-between">
 							<div className="flex flex-col gap-2 md:gap-4 sm:flex-row">
-								<Link to="/showcase" className="btn md:btn-lg cta-btn w-full sm:w-auto">
+								<Link to="/showcase/" className="btn md:btn-lg cta-btn w-full sm:w-auto">
 									View Showcase <i className="fas fa-arrow-right"></i>
 								</Link>
 
-								<Link to="/contact" className="btn md:btn-lg cta-btn-alt w-full sm:w-auto">
+								<Link to="/contact/" className="btn md:btn-lg cta-btn-alt w-full sm:w-auto">
 									Contact Me
 								</Link>
 							</div>
@@ -121,7 +121,7 @@ export default function Home() {
 							</a>
 
 							<div className="text-xs lg:text-sm text-end lg:text-start">
-								<CueLink to="/background" icon="fa-arrow-right">
+								<CueLink to="/background/" icon="fa-arrow-right">
 									MY BACKGROUND
 								</CueLink>
 							</div>
@@ -156,7 +156,7 @@ export default function Home() {
 							<div className="flex flex-col items-start gap-4">
 								<p className="font-body text-sm lg:text-base text-start opacity-80">Plus a few more tools I've picked up along the way.</p>
 								<div className="text-xs lg:text-sm">
-									<CueLink to="/showcase" icon="fa-arrow-right">
+									<CueLink to="/showcase/" icon="fa-arrow-right">
 										VIEW ALL SKILLS
 									</CueLink>
 								</div>
@@ -166,7 +166,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="projects" className="layout bg-base-300 border-b border-current/25">
+			<section id="projects" className="layout min-h-0 bg-base-300 border-b border-current/25">
 				<div className="layout-rail flex lg:flex-col gap-1">
 					<span>04</span>
 					<span className="inline lg:hidden">/</span>
@@ -176,12 +176,12 @@ export default function Home() {
 				<div className="layout-panel flex flex-col gap-2 md:gap-4 lg:gap-8 pb-4 md:pb-8 lg:py-16">
 					<div className="flex justify-between items-end">
 						<div className="space-y-1 md:space-y-2 lg:space-y-4">
-							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">{PROJECTS.heading}</div>
+							<div className="badge badge-primary badge-xs md:badge-sm lg:badge-md uppercase">{PROJECTS.badge}</div>
 							<h1 className="text-2xl md:text-4xl lg:text-6xl">{PROJECTS.heading}</h1>
 						</div>
 
 						<div className="text-xs lg:text-sm">
-							<CueLink to="/showcase" icon="fa-arrow-right">
+							<CueLink to="/showcase/" icon="fa-arrow-right">
 								ALL PROJECTS
 							</CueLink>
 						</div>
@@ -189,9 +189,9 @@ export default function Home() {
 
 					<div className="divider m-0"></div>
 
-					<div className="grid gap-2 md:gap-4 lg:gap-8 lg:grid-cols-2">
+					<div className="grid gap-2 md:gap-4 lg:gap-8 md:grid-cols-2">
 						{projects.slice(0, 3).map((project, index) => (
-							<div key={project.name} className={index === 0 ? "lg:col-span-2" : ""}>
+							<div key={project.name} className={index === 0 ? "md:col-span-2" : ""}>
 								<ProjectCard project={project} featured={index === 0} />
 							</div>
 						))}
@@ -215,7 +215,7 @@ export default function Home() {
 					<div className="space-y-4 lg:text-end">
 						<p className="text-sm md:text-base lg:text-lg">{CONNECT.text}</p>
 						<div className="text-center lg:text-end">
-							<Link to="/contact" className="btn cta-btn btn-md md:btn-lg lg:btn-xl w-full lg:w-auto">
+							<Link to="/contact/" className="btn cta-btn btn-md md:btn-lg lg:btn-xl w-full lg:w-auto">
 								Contact Me <i className="fas fa-arrow-right" aria-hidden="true"></i>
 							</Link>
 						</div>
